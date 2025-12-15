@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu, X, Snowflake } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,9 +19,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <Snowflake className="w-6 h-6 text-primary-foreground" />
-            </div>
+            <img src={logo} alt="YJ Service Logo" className="h-12 w-auto" />
             <span className="font-semibold text-lg text-foreground">
               ร้านยิ่งเจริญแอร์ วังชิ้น
             </span>
