@@ -1,59 +1,87 @@
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Snowflake, Wrench, Wind } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import news1 from "@/assets/news1.jpg";
+import news2 from "@/assets/news2.jpg";
+import news3 from "@/assets/news3.jpg";
 
 const newsItems = [
   {
     id: 1,
-    title: "โปรโมชั่นล้างแอร์",
-    description: "บริการล้างแอร์ราคาพิเศษ รับประกันความสะอาด พร้อมตรวจเช็คระบบ",
-    icon: Wind,
+    title: "ติดตั้งแอร์ Carrier Inverter",
+    description: "บริการติดตั้งแอร์ Carrier Inverter ประหยัดไฟเบอร์ 5 พร้อมรับประกันงานติดตั้ง",
+    image: news1,
+    link: "https://www.facebook.com/share/p/17wZHnWbhd/",
   },
   {
     id: 2,
-    title: "ติดตั้งแอร์ใหม่",
-    description: "รับติดตั้งแอร์ทุกยี่ห้อ พร้อมรับประกันงานติดตั้ง บริการหลังการขาย",
-    icon: Snowflake,
+    title: "โปรโมชั่นเครื่องทำน้ำอุ่น TURBORA",
+    description: "เครื่องทำน้ำอุ่น TURBORA ราคาพิเศษเพียง 1,990 บาท พร้อมติดตั้ง",
+    image: news2,
+    link: "https://www.facebook.com/share/p/1DGDfuacdT/",
   },
   {
     id: 3,
-    title: "ซ่อมแอร์ด่วน",
-    description: "บริการซ่อมแอร์ฉุกเฉิน รวดเร็ว ราคาเป็นกันเอง ช่างมืออาชีพ",
-    icon: Wrench,
+    title: "สายไฟ THW 1x2.5 ราคาพิเศษ",
+    description: "สายไฟ THW 1x2.5 (100 ม.) ราคาพิเศษเพียง 990 บาท คุณภาพดี มาตรฐาน",
+    image: news3,
+    link: "https://www.facebook.com/share/p/1Buh7diU7L/",
   },
 ];
 
 const NewsSection = () => {
   return (
-    <section id="news" className="py-16 bg-background">
+    <section id="news" className="py-16 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-foreground mb-12">
-          ข่าวสารล่าสุด
-        </h2>
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+            อัปเดตล่าสุด
+          </span>
+          <h2 className="text-3xl font-bold text-foreground font-kanit">
+            ข่าวสารและโปรโมชั่น
+          </h2>
+          <p className="text-muted-foreground mt-2">ติดตามข่าวสารและโปรโมชั่นสุดพิเศษจากทางร้าน</p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {newsItems.map((item, index) => (
             <Card 
               key={item.id} 
-              className="border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="overflow-hidden border border-border/50 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in group bg-card"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <CardHeader className="text-center pb-2">
-                <div className="w-20 h-20 mx-auto bg-secondary rounded-xl flex items-center justify-center mb-4">
-                  <item.icon className="w-10 h-10 text-primary" />
+              <div className="relative overflow-hidden aspect-[4/3]">
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
+                    ดูรายละเอียด
+                  </span>
                 </div>
-              </CardHeader>
-              <CardContent className="text-center">
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+              </div>
+              <CardContent className="pt-5 pb-3">
+                <h3 className="text-lg font-semibold text-foreground mb-2 font-kanit line-clamp-2 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm line-clamp-2">
                   {item.description}
                 </p>
               </CardContent>
-              <CardFooter className="justify-center">
-                <Button variant="outline" size="sm">
-                  อ่านเพิ่มเติม
+              <CardFooter className="pt-0 pb-5">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all"
+                  asChild
+                >
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <span>ดูโพสต์ Facebook</span>
+                    <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
+                  </a>
                 </Button>
               </CardFooter>
             </Card>
