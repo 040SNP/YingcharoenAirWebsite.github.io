@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/yingcharoen-air-website-44">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
