@@ -44,9 +44,9 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-              <span className="inline-block animate-fade-in" style={{ animationDelay: "0.1s" }}>ร้านยิ่งเจริญแอร์</span>
+              <span className="inline-block animate-fade-in" style={{ animationDelay: "0.1s" }}>ร้านยิ่งเจริญไฟฟ้า&แอร์</span>
               <span className="block text-gradient animate-fade-in relative" style={{ animationDelay: "0.2s" }}>
-                วังชิ้น
+                เซอร์วิส
                 <span className="absolute -right-2 -top-2">
                   <Wind className="w-8 h-8 text-primary/60 animate-spin-slow" />
                 </span>

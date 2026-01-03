@@ -4,6 +4,7 @@ import NewsSection from "@/components/NewsSection";
 import ProductsSection from "@/components/ProductsSection";
 import ServicesSection from "@/components/ServicesSection";
 import Footer from "@/components/Footer";
+import FloatingSocialButtons from "@/components/FloatingSocialButtons";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <ServicesSection />
       </main>
       <Footer />
+      <FloatingSocialButtons />
     </div>
   );
 };
