@@ -21,7 +21,7 @@ const FloatingSocialButtons = () => {
 
       {/* Messenger Button */}
       <a
-        href="https://www.facebook.com/messages/t/100063513489498"
+        href="https://m.me/yingjareanair.wangchin"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-gradient-to-br from-[#00B2FF] to-[#006AFF] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 hover:shadow-xl group"
