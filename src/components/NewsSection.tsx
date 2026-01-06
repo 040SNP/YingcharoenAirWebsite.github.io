@@ -8,10 +8,10 @@ import news3 from "@/assets/news3-new.jpg";
 const newsItems = [
   {
     id: 1,
-    title: "ติดตั้งแอร์ Daikin Inverter",
-    description: "บริการติดตั้งแอร์ Daikin Inverter R32 ประหยัดไฟ พร้อมรับประกันงานติดตั้ง",
+    title: "โปรโมชั่นพิเศษ",
+    description: "โปรโมชั่นสุดพิเศษจากทางร้าน ดูรายละเอียดเพิ่มเติมได้ที่ Facebook",
     image: news1,
-    link: "https://www.facebook.com/share/p/1ADBtTGk9S/",
+    link: "https://www.facebook.com/share/p/1ATJihGLP9/",
   },
   {
     id: 2,
