@@ -1,6 +1,14 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import news1 from "@/assets/news1.png";
 import news2 from "@/assets/news2.jpg";
 import news3 from "@/assets/news3-new.jpg";
@@ -51,49 +59,68 @@ const NewsSection = () => {
           <p className="text-muted-foreground mt-2">ติดตามข่าวสารและโปรโมชั่นสุดพิเศษจากทางร้าน</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {newsItems.map((item, index) => (
-            <Card 
-              key={item.id} 
-              className="overflow-hidden border border-border/50 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in group bg-card"
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              <div className="relative overflow-hidden aspect-[4/3]">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
-                    ดูรายละเอียด
-                  </span>
-                </div>
-              </div>
-              <CardContent className="pt-5 pb-3">
-                <h3 className="text-lg font-semibold text-foreground mb-2 font-kanit line-clamp-2 group-hover:text-primary transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm line-clamp-2">
-                  {item.description}
-                </p>
-              </CardContent>
-              <CardFooter className="pt-0 pb-5">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all"
-                  asChild
-                >
-                  <a href={item.link} target="_blank" rel="noopener noreferrer">
-                    <span>ดูโพสต์ Facebook</span>
-                    <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+        <div className="relative px-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {newsItems.map((item, index) => (
+                <CarouselItem key={item.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card 
+                    className="overflow-hidden border border-border/50 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in group bg-card h-full"
+                    style={{ animationDelay: `${index * 0.15}s` }}
+                  >
+                    <div className="relative overflow-hidden aspect-[4/3]">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
+                          ดูรายละเอียด
+                        </span>
+                      </div>
+                    </div>
+                    <CardContent className="pt-5 pb-3">
+                      <h3 className="text-lg font-semibold text-foreground mb-2 font-kanit line-clamp-2 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm line-clamp-2">
+                        {item.description}
+                      </p>
+                    </CardContent>
+                    <CardFooter className="pt-0 pb-5">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full group/btn hover:bg-primary hover:text-primary-foreground transition-all"
+                        asChild
+                      >
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                          <span>ดูโพสต์ Facebook</span>
+                          <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
+                        </a>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0" />
+            <CarouselNext className="right-0" />
+          </Carousel>
         </div>
       </div>
     </section>
