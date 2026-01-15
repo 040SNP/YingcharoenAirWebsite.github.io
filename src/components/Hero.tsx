@@ -66,7 +66,7 @@ const Hero = () => {
               <span>ล้าง</span>
             </p>
             
-            <p className="text-muted-foreground mb-8 max-w-lg animate-fade-in leading-relaxed" style={{ animationDelay: "0.4s" }}>
+            <p className="text-lg md:text-xl text-foreground font-semibold mb-8 max-w-lg animate-fade-in leading-relaxed" style={{ animationDelay: "0.4s" }}>
               บริการติดตั้งเดินสายไฟฟ้าภายใน-ภายนอก แอร์ กล้องวงจรปิด ดาวเทียม 
               เครื่องทำน้ำอุ่น และอุปกรณ์ไฟฟ้าทุกชนิด
             </p>
