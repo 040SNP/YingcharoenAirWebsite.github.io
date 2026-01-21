@@ -66,12 +66,10 @@ const Hero = () => {
               <span>ล้าง</span>
             </p>
             
-            <div className="bg-primary/10 border-2 border-primary/30 rounded-xl px-5 py-4 mb-8 max-w-lg animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <p className="text-lg md:text-xl text-foreground font-bold leading-relaxed">
-                <span className="text-primary">บริการติดตั้งเดินสายไฟฟ้าภายใน-ภายนอก</span> แอร์ กล้องวงจรปิด ดาวเทียม 
-                เครื่องทำน้ำอุ่น และอุปกรณ์ไฟฟ้าทุกชนิด
-              </p>
-            </div>
+            <p className="text-lg md:text-xl text-foreground font-bold mb-8 max-w-lg animate-fade-in leading-relaxed" style={{ animationDelay: "0.4s" }}>
+              <span className="bg-primary/10 border-2 border-primary/30 rounded-lg px-3 py-1 text-primary inline-block mb-2">บริการติดตั้งเดินสายไฟฟ้าภายใน-ภายนอก</span>{" "}
+              แอร์ กล้องวงจรปิด ดาวเทียม เครื่องทำน้ำอุ่น และอุปกรณ์ไฟฟ้าทุกชนิด
+            </p>
             
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
               <Button size="lg" className="gap-2 group relative overflow-hidden" asChild>
