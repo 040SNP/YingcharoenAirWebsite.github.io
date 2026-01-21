@@ -66,12 +66,7 @@ const Hero = () => {
               <span>ล้าง</span>
             </p>
             
-            <p className="text-lg md:text-xl text-foreground font-bold mb-8 max-w-lg animate-fade-in leading-relaxed" style={{ animationDelay: "0.4s" }}>
-              <span className="bg-primary/10 border-2 border-primary/30 rounded-lg px-3 py-1 text-primary inline-block mb-2">บริการติดตั้งเดินสายไฟฟ้าภายใน-ภายนอก</span>{" "}
-              แอร์ กล้องวงจรปิด ดาวเทียม เครื่องทำน้ำอุ่น และอุปกรณ์ไฟฟ้าทุกชนิด
-            </p>
-            
-            <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <Button size="lg" className="gap-2 group relative overflow-hidden" asChild>
                 <a href="tel:0834749339">
                   <span className="absolute inset-0 bg-gradient-to-r from-primary-foreground/0 via-primary-foreground/10 to-primary-foreground/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -86,6 +81,11 @@ const Hero = () => {
                 </a>
               </Button>
             </div>
+            
+            <p className="text-lg md:text-xl text-foreground font-bold mt-6 max-w-lg animate-fade-in leading-relaxed" style={{ animationDelay: "0.5s" }}>
+              <span className="bg-primary/10 border-2 border-primary/30 rounded-lg px-3 py-1 text-primary inline-block mb-2">บริการติดตั้งเดินสายไฟฟ้าภายใน-ภายนอก</span>{" "}
+              แอร์ กล้องวงจรปิด ดาวเทียม เครื่องทำน้ำอุ่น และอุปกรณ์ไฟฟ้าทุกชนิด
+            </p>
           </div>
 
           {/* Right Content - Image Carousel */}
