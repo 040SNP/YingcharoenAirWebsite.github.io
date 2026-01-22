@@ -89,7 +89,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Image Carousel */}
-          <div className="relative animate-slide-in-right hidden lg:block">
+          <div className="relative animate-slide-in-right">
             <div className="relative w-full max-w-2xl mx-auto">
               {/* Animated glow rings */}
               <div className="absolute -inset-8 bg-gradient-to-r from-primary/30 via-sky-medium/40 to-primary/30 rounded-3xl blur-2xl animate-pulse opacity-60" />
