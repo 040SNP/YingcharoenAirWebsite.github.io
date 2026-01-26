@@ -10,7 +10,7 @@ import ProductDetail from "./pages/ProductDetail";
 const queryClient = new QueryClient();
 
 // Use basename only for GitHub Pages production build
-const basename = import.meta.env.PROD ? "/YingcharoenAirWebsite.github.io" : "";
+const basename = import.meta.env.PROD ? "/YingcharoenAirWebsite" : "";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
